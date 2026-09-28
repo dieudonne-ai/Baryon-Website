@@ -20,15 +20,19 @@ if (glow) {
   }
 }
 
-// mobile menu toggle
+// mobile menu toggle (with accessibility + safety closes)
 const menuBtn = document.getElementById('menuBtn');
 if (menuBtn) {
-  menuBtn.addEventListener('click', () => {
-    document.body.classList.toggle('menu-open');
-  });
-  document.querySelectorAll('.mobile-menu a').forEach(a => {
-    a.addEventListener('click', () => document.body.classList.remove('menu-open'));
-  });
+  const setMenu = (open) => {
+    document.body.classList.toggle('menu-open', open);
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  };
+  menuBtn.setAttribute('aria-expanded', 'false');
+  menuBtn.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
+  document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  window.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+  window.addEventListener('resize', () => { if (window.innerWidth > 780) setMenu(false); });
 }
 
 // scroll reveal (sections + industry/why cells individually for their icon draw-in)
@@ -41,7 +45,7 @@ if ('IntersectionObserver' in window) {
         io.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.16 });
+  }, { threshold: 0.05, rootMargin: '0px 0px -6% 0px' });
   revealEls.forEach(el => io.observe(el));
 } else {
   revealEls.forEach(el => el.classList.add('in'));

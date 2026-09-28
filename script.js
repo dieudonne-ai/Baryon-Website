@@ -46,3 +46,17 @@ if ('IntersectionObserver' in window) {
 } else {
   revealEls.forEach(el => el.classList.add('in'));
 }
+
+// contact form — opens the visitor's email app with a pre-filled message
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const f = new FormData(contactForm);
+    const subject = encodeURIComponent('Baryon inquiry — ' + (f.get('org') || f.get('name')));
+    const body = encodeURIComponent(
+      'Name: ' + f.get('name') + '\nOrganization: ' + (f.get('org') || '-') + '\nEmail: ' + f.get('email') + '\n\n' + f.get('message')
+    );
+    window.location.href = 'mailto:hello@baryon.africa?subject=' + subject + '&body=' + body;
+  });
+}

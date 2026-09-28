@@ -6,6 +6,10 @@ Immersive, monochrome (black / white / grayscale) showcase website for Baryon, b
 
 - `index.html` — page structure and content
 - `styles.css` — all styling, layout, responsive breakpoints and animations
+- `about.html`, `solutions.html`, `industries.html`, `ai.html`, `contact.html` — detailed pages for each section
+- `enterprise-software.html`, `digital-transformation.html`, `data-analytics.html`, `artificial-intelligence.html` — in-depth pages for each "What we do" capability
+- `privacy-policy.html`, `terms-of-service.html` — legal pages linked from the footer
+- `404.html` — custom "page not found" page (served automatically by GitHub Pages)
 - `script.js` — mobile menu, scroll-reveal, cursor glow, splash screen
 - `assets/baryon-logo.png` — the Baryon Group wordmark (transparent-safe on black)
 
@@ -40,3 +44,7 @@ npx serve .
 - Industries: icons draw themselves in on scroll and float on hover
 - Platform: three capability nodes animate toward a shared center point
 - Operations / AI / MIDE AI: a light packet travels along each flow diagram
+
+## Partners
+
+The Partners section on the home page shows partner logos (transparent PNGs in `assets/`). To add a partner, copy a `.partner-card` block in `index.html` and point it to a new logo file.

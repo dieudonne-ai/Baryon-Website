@@ -48,3 +48,10 @@ npx serve .
 ## Partners
 
 The Partners section on the home page shows partner logos (transparent PNGs in `assets/`). To add a partner, copy a `.partner-card` block in `index.html` and point it to a new logo file.
+
+## Projects
+
+The "Projects built by Baryon" section on the home page (`#projects`) lists Baryon Réactivation, MIDE AI and MIDE Engine. For each project card in `index.html`:
+
+- drop the logo in `assets/projects/` as `baryon-reactivation.png`, `mide-ai.png`, `mide-engine.png` (transparent PNG; until it exists a text wordmark is shown)
+- replace the `href="#projects"` on the "Visit website" link with the project's real URL

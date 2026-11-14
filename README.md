@@ -51,7 +51,8 @@ The Partners section on the home page shows partner logos (transparent PNGs in `
 
 ## Projects
 
-The "Projects built by Baryon" section on the home page (`#projects`) lists Baryon Réactivation, MIDE AI and MIDE Engine. For each project card in `index.html`:
+The "Projects built by Baryon" section on the home page (`#projects`) lists Baryon Reactivation, MIDE AI, MIDE Engine and Baryon Workspace. Logos are in `assets/projects/` (a card without a logo file shows a text wordmark). To add a website link to a card, add this after its description:
 
-- drop the logo in `assets/projects/` as `baryon-reactivation.png`, `mide-ai.png`, `mide-engine.png` (transparent PNG; until it exists a text wordmark is shown)
-- replace the `href="#projects"` on the "Visit website" link with the project's real URL
+```html
+<a class="textlink more-link" href="https://..." target="_blank" rel="noopener">Visit website →</a>
+```

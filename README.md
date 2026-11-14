@@ -51,7 +51,7 @@ The Partners section on the home page shows partner logos (transparent PNGs in `
 
 ## Projects
 
-The "Projects built by Baryon" section on the home page (`#projects`) lists Baryon Reactivation, MIDE AI, MIDE Engine and Baryon Workspace. Logos are in `assets/projects/` (a card without a logo file shows a text wordmark). To add a website link to a card, add this after its description:
+The "Projects built by Baryon" section on the home page (`#projects`) lists Baryon Reactivation, MIDE AI, MIDE Engine, Baryon Workspace and Morixa Hub. Logos are in `assets/projects/` (a card without a logo file shows a text wordmark). To add a website link to a card, add this after its description:
 
 ```html
 <a class="textlink more-link" href="https://..." target="_blank" rel="noopener">Visit website →</a>
